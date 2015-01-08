@@ -10,16 +10,6 @@ module TicTacToe
 			grid[y][x]			
 		end
 
-		def draw?
-			grid.flatten.map { |cell| cell.value }.none_empty?			
-		end
-
-		private
-
-		def default_grid
-			Array.new(3) { Array.new(3) { Cell.new }}
-		end
-
 		def set_cell(x, y, value)
 			get_cell(x, y).value = value			
 		end
@@ -29,6 +19,22 @@ module TicTacToe
 			return :draw if draw?
 			false			
 		end
+
+		def formatted_grid
+      		grid.each do |row|
+        	puts row.map { |cell| cell.value.empty? ? "_" : cell.value }.join(" ")
+      	end
+   
+		private
+
+		def default_grid
+			Array.new(3) { Array.new(3) { Cell.new }}
+		end
+
+		def draw?
+			grid.flatten.map { |cell| cell.value }.none_empty?			
+		end
+
 
 		def winning_positions
 			grid + #rows
