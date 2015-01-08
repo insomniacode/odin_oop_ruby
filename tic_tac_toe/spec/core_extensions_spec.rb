@@ -40,9 +40,8 @@ describe Array do
 			end
 
 
-		end
-
 	end
+
 
 	context "#none_empty?" do
 		it "returns false if all elements of the Array are empty" do
