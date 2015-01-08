@@ -29,7 +29,7 @@ module TicTacToe
 		def play
 			puts "#{current_player.name} has randomly been selected as the first player"
 			while true
-				board.formatted _grid
+				board.formatted_grid
 				puts ""
 				puts solicit_move
 				x, y = get_move

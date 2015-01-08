@@ -8,7 +8,7 @@ class Array
 	end
 
 	def any_empty?
-		self.any? { |element| elements.to_s.empty? }
+		self.any? { |element| element.to_s.empty? }
 	end
 
 	def none_empty?
